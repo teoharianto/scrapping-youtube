@@ -1,5 +1,6 @@
 # Scrapping-youtube
-Scrapping youtube with python\n
+Scrapping youtube with python
+
 Cara pakai nya :
 1. Install BeautifulSoup4 terlebih dahulu | pip install beautifulsoup4
 2. Install Requests terlebih dahulu | pip install requests
