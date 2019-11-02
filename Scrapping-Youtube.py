@@ -9,7 +9,7 @@ filename = "Scraping-youtube%s.csv" % i
 downloadedFile = csv.writer(io.open(filename,'w', encoding="utf-8"))
 
 if page.status_code==200:
-    print("=" * 30 + "Title" +"=" * 30)
+    print("=" * 30 + "Finished" +"=" * 30)
     title = soup.select('h3 a')
     single = soup.find_all('span', class_="accessible-description")
     double = soup.find_all('a', class_="yt-uix-sessionlink spf-link ")
@@ -46,16 +46,7 @@ if page.status_code==200:
     singles()
     doubles()
     triples()
-    print()
+
     for row in titleList:
         downloadedFile.writerow(row)
-    
-    
-
-    
-        
-
-            
-            
-            
-            
+ 
