@@ -3,7 +3,7 @@ page = requests.get('https://www.youtube.com/', timeout=(5, None))
 soup = bs4.BeautifulSoup(page.text, 'html.parser')
 
 i = 0
-while os.path.exists('Downloaded File%s.txt' % i):
+while os.path.exists('Scrapping-youtube%s.csv' % i):
         i+=1
 filename = "Scraping-youtube%s.csv" % i
 downloadedFile = csv.writer(io.open(filename,'w', encoding="utf-8"))
