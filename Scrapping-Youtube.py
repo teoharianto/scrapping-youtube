@@ -1,17 +1,21 @@
-import bs4, requests, os, csv, io
+import bs4, requests, csv, io
+# get webpage data
 page = requests.get('https://www.youtube.com/', timeout=(5, None))
 soup = bs4.BeautifulSoup(page.text, 'html.parser')
 
 if page.status_code == requests.codes.ok:
+    # Input File name and open a file
     namaFile = input('Ketik Nama File Yang Diinginkan :\n>> ')
     openFile = io.open(f'{namaFile}.csv','w', encoding="utf-8")
     downloadedFile = csv.writer(openFile)
 
     print("=" * 30 + "Finished" +"=" * 30)
+    # Looking for element to scrap
     title = soup.select('h3 a')
     single = soup.find_all('span', class_="accessible-description")
     double = soup.find_all('a', class_="yt-uix-sessionlink spf-link ")
     triple = soup.select("ul[class='yt-lockup-meta-info']")
+    # List for all
     titleList=[]
     
     def titles():
