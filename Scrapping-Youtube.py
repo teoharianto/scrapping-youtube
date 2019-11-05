@@ -6,8 +6,9 @@ soup = bs4.BeautifulSoup(page.text, 'html.parser')
 if page.status_code == requests.codes.ok:
     # Input File name and open a file
     namaFile = input('Ketik Nama File Yang Diinginkan :\n>> ')
-    openFile = io.open(f'{namaFile}.csv','w', encoding="utf-8")
+    openFile = io.open(f'{namaFile}.csv','w', encoding="utf-8", newline='')
     downloadedFile = csv.writer(openFile)
+    downloadedFile.writerow(['Judul', 'Link Video', 'Durasi', 'Pengupload', 'Link Pengupload', 'Jumlah Penonton', 'Waktu Upload'])
 
     print("=" * 30 + "Finished" +"=" * 30)
     # Looking for element to scrap
