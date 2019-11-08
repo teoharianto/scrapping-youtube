@@ -1,6 +1,6 @@
 import bs4, requests, csv, io
 # get webpage data
-page = requests.get('https://www.youtube.com/', timeout=(5, None))
+page = requests.get('https://www.youtube.com/feed/trending', timeout=(5, None))
 soup = bs4.BeautifulSoup(page.text, 'html.parser')
 
 if page.status_code == requests.codes.ok:
